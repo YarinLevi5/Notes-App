@@ -1,0 +1,19 @@
+.note {
+  display: flex;
+  text-align: center;
+  border: 2px solid black;
+  flex-flow: column;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+  margin: 20px;
+  font-size: 20px;
+  background-color: cornflowerblue;
+}
+.deleteBtn,
+.updateBtn {
+  width: 80px;
+  background-color: white;
+  margin-left: 110px;
+  margin-bottom: 10px;
+}

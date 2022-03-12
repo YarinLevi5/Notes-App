@@ -1,0 +1,10 @@
+<div class="add-note">
+  <h1>Add Note</h1>
+  <input type="text" placeholder="Text" #text />
+  <input type="date" #date />
+  <label>
+    Is Done?
+    <input type="checkbox" #isDone value="false" />
+  </label>
+  <button (click)="addNote(text, date, isDone)">Add</button>
+</div>
