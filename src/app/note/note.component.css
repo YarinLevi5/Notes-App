@@ -5,15 +5,34 @@
   flex-flow: column;
   justify-content: center;
   width: 300px;
-  height: auto;
+  height: 300px;
   margin: 20px;
   font-size: 20px;
   background-color: cornflowerblue;
 }
 .deleteBtn,
-.updateBtn {
+.editBtn {
   width: 80px;
   background-color: white;
   margin-left: 110px;
   margin-bottom: 10px;
+}
+.edit {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.edit input {
+  margin: 10px;
+  padding: 5px;
+}
+label {
+  display: flex;
+  justify-content: center;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
 }

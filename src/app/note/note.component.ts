@@ -8,10 +8,31 @@ import { NotesService } from './../services/notes.service';
 })
 export class NoteComponent implements OnInit {
   @Input() note?: Note;
-  constructor(private service: NotesService) {}
+  mode: boolean = false;
+  btnText: boolean = false;
+  isChecked: boolean = false;
+  constructor(private service: NotesService) {
+    this.service.orderByDate();
+  }
 
   deleteNote() {
     this.service.removeNote(this.note?.id);
   }
+
+  updateNote(text: string, date: string, isDone: boolean) {
+    this.mode = !this.mode;
+    this.btnText = true;
+    if (this.note?.isDone) {
+      this.isChecked = true;
+    }
+    let editedObject = {
+      id: this.note?.id,
+      text,
+      date,
+      isDone,
+    };
+    this.service.editAndSaveNote(editedObject.id, editedObject);
+  }
+
   ngOnInit(): void {}
 }

@@ -23,6 +23,10 @@ export class AddNoteComponent implements OnInit {
     isDone.checked = false;
   }
 
+  orderDateBtn() {
+    this.service.orderByDate();
+  }
+
   constructor(private service: NotesService) {}
 
   ngOnInit(): void {}

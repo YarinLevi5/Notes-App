@@ -1,7 +1,22 @@
 <div class="note">
-  <p>Text : {{ note?.text }}</p>
-  <p>Date : {{ note?.date }}</p>
-  <p>Is Done? {{ note?.isDone }}</p>
+  <div [ngClass]="mode ? 'hide' : 'show'">
+    <p>Text : {{ note?.text }}</p>
+    <p>Date : {{ note?.date }}</p>
+    <p>Is Done? {{ note?.isDone }}</p>
+  </div>
+  <div class="edit" [ngClass]="mode ? 'show' : 'hide'">
+    <input type="text" placeholder="text" [value]="note?.text" #text />
+    <input type="date" [value]="note?.date" #date />
+    <label
+      >Is Done?
+      <input type="checkbox" [checked]="isChecked" #check />
+    </label>
+  </div>
+  <button
+    class="editBtn"
+    (click)="updateNote(text.value, date.value, check.checked)"
+  >
+    {{ btnText ? "Save" : "Edit" }}
+  </button>
   <button class="deleteBtn" (click)="deleteNote()">Delete</button>
-  <button class="updateBtn">Update</button>
 </div>
